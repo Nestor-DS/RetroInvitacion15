@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación a los 15 años de Abril</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    />
+  </head>
+  <body>
+    <div class="invitation">
+      <h1>¡Estás Invitado!</h1>
+      <p>
+        Con la bendición de Dios y el amor de mi familia, me siento muy feliz de
+        llegar a este momento de mi vida. Los invito a compartir conmigo este
+        día tan especial.
+      </p>
+      <div>
+        <table>
+          <tr>
+            <th>Padres</th>
+            <th>Madrina</th>
+          </tr>
+          <tr>
+            <td>Arturo Merino Rivera</td>
+            <td>Olimpia Concepción Merino Rivera</td>
+          </tr>
+          <tr>
+            <td>Sofía Hernández Bautista</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <p>
+        Nos complace invitarte a celebrar los 15 años de nuestra querida Abril.
+      </p>
+      <h2>Misa de Agradecimiento</h2>
+      <ul>
+        <li><strong>Parroquia San Cayetano</strong></li>
+        <li><strong>Hora:</strong> 14:00</li>
+        <li>
+          <a
+            href="https://maps.app.goo.gl/w2eQWqVWch3VK9hc6"
+            class="location-button"
+            target="_blank"
+            data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.974806973202!2d-99.06517858522824!3d19.52248941577648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8427f621b89eab05%3A0x4c9a6e4e3b3a0d8a!2sIgnacio%20Zaragoza%20116%2C%20El%20Durazno%2C%20San%20Agust%C3%ADn%20Tlaxiaca%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1638514127866"
+            >Ver Ubicación</a
+          >
+        </li>
+      </ul>
+      <div class="container">
+        <h1>Te invito a mi fiesta</h1>
+        <div id="countdown"></div>
+        <div class="event-details">
+          <p><strong>Fecha: </strong>21 de diciembre del 2024</p>
+          <p><strong>Hora: </strong>17:00</p>
+          <p>
+            <strong>Dirección: </strong>Ignacio Zaragoza 116, El Durazno, San
+            Agustín Tlaxiaca.
+          </p>
+        </div>
+        <p><strong>Recepción:</strong> A partir de las 17:00</p>
+        <a
+          href="https://maps.app.goo.gl/w2eQWqVWch3VK9hc6"
+          class="location-button"
+          target="_blank"
+          data-map-url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.974806973202!2d-99.06517858522824!3d19.52248941577648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8427f621b89eab05%3A0x4c9a6e4e3b3a0d8a!2sIgnacio%20Zaragoza%20116%2C%20El%20Durazno%2C%20San%20Agust%C3%ADn%20Tlaxiaca%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1638514127866"
+          >Ver Ubicación</a
+        >
+      </div>
+      <p class="footer">
+        Esperamos contar con tu presencia para celebrar juntos este momento tan
+        especial.
+      </p>
+      <p class="footer">Con cariño, La Familia MERINO HERNÁNDEZ</p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSe3FY4_InfDgozXyE3aRHT0ZTqpOzxr0Ykf620tpHjbeQTdoQ/viewform?usp=sf_link"
+        class="location-button"
+        target="_blank"
+        >Confirma asistencia</a
+      >
+    </div>
+
+    <!-- Modal -->
+    <div id="mapsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe
+          src=""
+          id="mapsIframe"
+          frameborder="0"
+          style="width: 100%; height: 400px"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="countdown.js"></script>
+    <script>
+      // JavaScript para abrir y cerrar el modal
+      var modal = document.getElementById("mapsModal");
+      var iframe = document.getElementById("mapsIframe");
+      var span = document.getElementsByClassName("close")[0];
+
+      document.querySelectorAll(".location-button").forEach((button) => {
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          iframe.src = this.getAttribute("data-map-url");
+          modal.style.display = "block";
+        });
+      });
+
+      span.onclick = function () {
+        modal.style.display = "none";
+        iframe.src = "";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          iframe.src = "";
+        }
+      };
+    </script>
+  </body>
+</html>

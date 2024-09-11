@@ -1,0 +1,346 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.invitation {
+  max-width: 600px;
+  margin: 50px auto;
+  background: linear-gradient(45deg, #8f0047, #770094);
+  padding: 30px;
+  box-shadow: 0 12px 24px rgba(144, 144, 144, 0.4);
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  transform: translateY(20px);
+  animation: slideIn 0.8s ease-in-out forwards;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #f39ac6;
+  font-size: 2.8em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  text-shadow: 0 0 10px #ff0081, 0 0 20px #ff0081, 0 0 30px #ff0081,
+    0 0 40px #ff0081;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* Animación de neón */
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #ff0081, 0 0 20px #ff0081, 0 0 30px #ff0081,
+      0 0 40px #ff0081;
+  }
+  to {
+    text-shadow: 0 0 20px #ff0081, 0 0 30px #ff0081, 0 0 40px #ff0081,
+      0 0 50px #ff0081;
+  }
+}
+
+p {
+  color: #eee;
+  line-height: 1.8;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+p:hover {
+  color: #ff0081;
+}
+
+.event-details p {
+  margin: 15px 0;
+}
+
+h2 {
+  color: #ff0081;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-shadow: 0 0 5px #ff0081;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+ul li {
+  margin: 10px 0;
+  color: #eee;
+  font-size: 1.1em;
+}
+
+ul li:hover {
+  color: #ff0081;
+  transform: translateX(10px);
+}
+
+strong {
+  color: #ff0081;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 2.5em;
+  color: #ff0081;
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+.footer:hover {
+  opacity: 1;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #ff0081;
+  color: white;
+  font-weight: 600;
+}
+
+td {
+  background-color: #222;
+  color: #eee;
+  border-top: 1px solid #333;
+}
+
+td:hover {
+  background-color: #444;
+}
+
+/* Botones de ubicación */
+.location-button {
+  background-color: #ff0081;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #ff4b6e;
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s;
+}
+
+.modal-content {
+  background-color: #222;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.close {
+  color: #ff0081;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff4b6e;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo del temporizador circular */
+#countdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.timer-section {
+  display: inline-block;
+  margin: 0 10px;
+  text-align: center;
+  color: #ff0081;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.timer-section .number {
+  background-color: #222;
+  color: #ff0081;
+  font-size: 2em;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.timer-section span {
+  font-size: 1.2em;
+}
+
+/* Animación para el temporizador */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .invitation {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .location-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  #countdown {
+    flex-direction: column;
+  }
+
+  .timer-section {
+    margin: 5px 0;
+  }
+
+  .timer-section .number {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2em;
+  }
+
+  .timer-section span {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    font-size: 0.8em;
+  }
+
+  .location-button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+
+  .timer-section .number {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1em;
+  }
+
+  .timer-section span {
+    font-size: 0.7em;
+  }
+}
