@@ -1,13 +1,24 @@
-var eventDate = new Date("Dec 21, 2024 17:00:00").getTime();
+const eventDate = new Date("Dec 21, 2024 17:00:00").getTime();
+let countdownFunction;
 
-var countdownFunction = setInterval(function () {
-  var now = new Date().getTime();
-  var distance = eventDate - now;
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(
+    2,
+    "0"
+  );
+  const hours = String(
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  ).padStart(2, "0");
+  const minutes = String(
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+  ).padStart(2, "0");
+  const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(
+    2,
+    "0"
+  );
 
   document.getElementById("days").innerHTML = days;
   document.getElementById("hours").innerHTML = hours;
@@ -19,18 +30,17 @@ var countdownFunction = setInterval(function () {
     document.getElementById("countdown").innerHTML =
       "<div class='event-started'>¡El evento ha comenzado!</div>";
   }
-}, 1000);
-
-const audioPlayer = document.getElementById("audioPlayer");
-
-function togglePlay() {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-  } else {
-    audioPlayer.pause();
-  }
 }
 
-window.onload = function () {
-  audioPlayer.play();
-};
+function startCountdown() {
+  countdownFunction = setInterval(updateCountdown, 1000);
+}
+
+function togglePlay() {
+  const audioPlayer = document.getElementById("audioPlayer");
+  audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause();
+}
+
+document.getElementById("playButton").addEventListener("click", togglePlay);
+
+window.onload = startCountdown;
