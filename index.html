@@ -9,7 +9,6 @@
       content="Invitación a los 15 años de Abril Merino Hernández"
     />
     <link rel="icon" href="assets/img/favicon.png" type="image/png" />
-
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -18,116 +17,136 @@
   </head>
 
   <body>
-    <div class="invitation">
-      <h1>¡Estás Invitado!</h1>
-      <p>
-        Con la bendición de Dios y el amor de mi familia, me siento muy feliz de
-        llegar a este momento de mi vida. Los invito a compartir conmigo este
-        día tan especial.
-      </p>
+    <div class="welcome-screen">
+      <h1>¡Acepta la Invitación!</h1>
+      <button class="reveal-button" onclick="revealInvitation()">
+        Ver Invitación
+      </button>
+    </div>
 
-      <div class="player-container">
-        <div class="player-bg">
-          <div class="player">
-            <audio id="audioPlayer" autoplay loop>
-              <source src="assets/music.mp3" type="audio/mpeg" />
-            </audio>
-            <div class="play-button" onclick="togglePlay()">
-              <span class="play-icon"> ▶</span>
-            </div>
+    <main>
+      <section class="section name"></section>
+
+      <section class="section invitation">
+        <h1>¡Estás Invitado!</h1>
+        <p>
+          Con la bendición de Dios y el amor de mi familia, me siento muy feliz
+          de llegar a este momento de mi vida. Los invito a compartir conmigo
+          este día tan especial.
+        </p>
+        <audio id="audioPlayer" src="assets/music.mp3"></audio>
+        <div class="player-container">
+          <button id="playButton" class="play-button">▶️</button>
+        </div>
+      </section>
+
+      <section class="section table-section">
+        <div class="details-container">
+          <table>
+            <tr>
+              <th>Padres</th>
+              <th>Madrina</th>
+            </tr>
+            <tr>
+              <td>Arturo Merino Rivera</td>
+              <td>Olimpia Concepción Merino Rivera</td>
+            </tr>
+            <tr>
+              <td>Sofía Hernández Bautista</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="section invitation-message">
+        <p>
+          Nos complace invitarte a celebrar los 15 años de nuestra querida
+          Abril.
+        </p>
+        <h2>Misa de Agradecimiento</h2>
+        <ul>
+          <li><strong>Parroquia San Cayetano</strong></li>
+          <li><strong>Hora:</strong> 14:00</li>
+          <li class="container">
+            <a
+              href="https://maps.app.goo.gl/ccutoiifCTpNybpX6"
+              class="location-button"
+              target="_blank"
+              >Ver Ubicación</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="section countdown-section">
+        <h2>Faltan</h2>
+        <div id="countdown">
+          <div class="timer-section">
+            <div class="number" id="days">00</div>
+            <span>Días</span>
+          </div>
+          <div class="timer-section">
+            <div class="number" id="hours">00</div>
+            <span>Horas</span>
+          </div>
+          <div class="timer-section">
+            <div class="number" id="minutes">00</div>
+            <span>Minutos</span>
+          </div>
+          <div class="timer-section">
+            <div class="number" id="seconds">00</div>
+            <span>Segundos</span>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="details-container">
-        <table>
-          <tr>
-            <th>Padres</th>
-            <th>Madrina</th>
-          </tr>
-          <tr>
-            <td>Arturo Merino Rivera</td>
-            <td>Olimpia Concepción Merino Rivera</td>
-          </tr>
-          <tr>
-            <td>Sofía Hernández Bautista</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-
-      <p>
-        Nos complace invitarte a celebrar los 15 años de nuestra querida Abril.
-      </p>
-
-      <h2>Misa de Agradecimiento</h2>
-      <ul>
-        <li><strong>Parroquia San Cayetano</strong></li>
-        <li><strong>Hora:</strong> 14:00</li>
-        <li class="container">
-          <a
-            href="https://maps.app.goo.gl/ccutoiifCTpNybpX6"
-            class="location-button"
-            target="_blank"
-            >Ver Ubicación</a
-          >
-        </li>
-      </ul>
-
-      <h2>Faltan</h2>
-      <div id="countdown">
-        <div class="timer-section">
-          <div class="number" id="days">00</div>
-          <span>Días</span>
-        </div>
-        <div class="timer-section">
-          <div class="number" id="hours">00</div>
-          <span>Horas</span>
-        </div>
-        <div class="timer-section">
-          <div class="number" id="minutes">00</div>
-          <span>Minutos</span>
-        </div>
-        <div class="timer-section">
-          <div class="number" id="seconds">00</div>
-          <span>Segundos</span>
-        </div>
-      </div>
-
-      <div class="event-details">
+      <section class="section location-section">
+        <h2>Detalles del Evento</h2>
         <p><strong>Fecha: </strong>21 de diciembre del 2024</p>
         <p><strong>Hora: </strong>17:00</p>
         <p>
           <strong>Dirección: </strong>Ignacio Zaragoza 116, El Durazno, San
           Agustín Tlaxiaca.
         </p>
-      </div>
 
-      <div class="container">
-        <a
-          href="https://maps.app.goo.gl/w2eQWqVWch3VK9hc6"
-          class="location-button"
-          target="_blank"
-          >Ver Ubicación</a
-        >
-      </div>
+        <div class="container">
+          <a
+            href="https://maps.app.goo.gl/w2eQWqVWch3VK9hc6"
+            class="location-button"
+            target="_blank"
+            >Ver Ubicación</a
+          >
+        </div>
 
-      <p class="footer">
-        Esperamos contar con tu presencia para celebrar juntos este momento tan
-        especial.
-      </p>
-      <p class="footer">Con cariño, La Familia MERINO HERNÁNDEZ</p>
+        <p class="footer">
+          Esperamos contar con tu presencia para celebrar juntos este momento
+          tan especial.
+        </p>
+        <p class="footer">Con cariño, La Familia MERINO HERNÁNDEZ</p>
+      </section>
 
-      <div class="container">
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSe3FY4_InfDgozXyE3aRHT0ZTqpOzxr0Ykf620tpHjbeQTdoQ/viewform?usp=sf_link"
-          class="location-button"
-          target="_blank"
-          >Confirma asistencia</a
-        >
-      </div>
-    </div>
+      <section class="section confirmation-section">
+        <h2>Confirma tu Asistencia</h2>
+        <div class="container">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe3FY4_InfDgozXyE3aRHT0ZTqpOzxr0Ykf620tpHjbeQTdoQ/viewform?usp=sf_link"
+            class="location-button"
+            target="_blank"
+            >Confirma asistencia</a
+          >
+        </div>
+      </section>
+    </main>
 
     <script src="countdown.js"></script>
+    <script>
+      function revealInvitation() {
+        document.querySelector(".welcome-screen").style.display = "none";
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.add("reveal");
+        });
+      }
+    </script>
   </body>
 </html>
