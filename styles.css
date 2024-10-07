@@ -2,10 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Playfair Display", serif;
-  background: linear-gradient(to bottom right, #ffefba, #ffffff);
+  background: linear-gradient(to bottom right, #f4f1fa, #ffffff);
   color: #333;
 }
 
+/* Animación de entrada */
 @keyframes slideIn {
   0% {
     transform: translateY(100%);
@@ -23,7 +24,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 239, 186, 0.9);
+  background: rgba(228, 224, 255, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,13 +35,14 @@ body {
 
 .welcome-screen h1 {
   font-size: 2.5rem;
-  color: #d4af37;
+  color: #2e003e;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Botón de revelación */
 .reveal-button {
-  background-color: #d4af37;
+  background-color: #a076f9;
   color: #fff;
   padding: 15px 30px;
   border: none;
@@ -48,14 +50,15 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 .reveal-button:hover {
-  background-color: #b3952a;
+  background-color: #8b5fd6;
   transform: scale(1.05);
 }
 
+/* Sección con efecto de revelación */
 .section {
   height: 100vh;
   display: flex;
@@ -73,42 +76,60 @@ body {
   transform: translateY(0);
 }
 
-/* Estilos generales */
+/* Sección 'name' */
 .name {
   position: relative;
-  padding-top: 0px;
-  background: url("Imagenes/others/1_pc.jpg") no-repeat center center;
+  padding: 20px;
+  background: url("Imagenes/others/pc1.jpg") no-repeat center center;
   background-size: cover;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
 }
 
-/* Estilos generales */
+.name h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f9f1ff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección 'invitation' */
 .invitation {
   position: relative;
-  padding-top: 0px;
+  padding: 20px;
   background: url("Imagenes/5.jpg") no-repeat center center;
   background-size: cover;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.invitation h1,
+.invitation p {
+  text-align: center;
 }
 
 .invitation h1 {
-  font-size: 2.5rem;
-  margin-top: 0px;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  color: #ffefe5;
+  margin: 20px 0;
 }
 
 .invitation p {
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-top: 350px;
+  font-size: 1.4rem;
+  color: #f9f1ff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgb(254, 254, 254);
 }
 
+/* Tipografía general */
 h1 {
-  color: #d4af37;
+  color: #a076f9;
   text-align: center;
   font-family: "Playfair Display", serif;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -117,38 +138,18 @@ h1 {
 h2 {
   color: #555;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 p {
   text-align: center;
   font-size: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-table {
-  width: 100%;
-  margin-bottom: 20px;
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  padding: 10px;
-  text-align: left;
-}
-
-table th {
-  background-color: #d4af37;
-  color: #fff;
-}
-
-table td {
-  background-color: rgba(245, 245, 245, 0.9);
-}
-
+/* Botones */
 .location-button {
-  background-color: #d4af37;
+  background-color: #a076f9;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -159,24 +160,17 @@ table td {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100px;
-}
-
 .location-button:hover {
-  background-color: #b3952a;
+  background-color: #8b5fd6;
   transform: scale(1.05);
 }
 
+/* Reloj de cuenta regresiva */
 #countdown {
   display: flex;
   justify-content: space-around;
   font-family: "Press Start 2P", sans-serif;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(51, 51, 51, 0.9);
   padding: 20px;
   border-radius: 10px;
   color: #eee;
@@ -192,62 +186,33 @@ table td {
 .timer-section .number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #d4af37;
+  color: #a076f9;
 }
 
-.timer-section span {
-  font-size: 1rem;
-  color: #bbb;
-}
-
+/* Pie de página */
 .footer {
   text-align: center;
   color: #666;
   margin-top: 20px;
 }
 
-.event-started {
-  color: #28a745;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.player-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  padding: 20px;
-}
-
-.player-bg {
-  background-color: rgba(245, 245, 245, 0.8);
-  border-radius: 100px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  max-width: 55px;
-  width: 55%;
-  text-align: center;
-}
-
-.player audio {
-  display: none;
-}
-
-.play-button {
-  font-size: 35px;
-  cursor: pointer;
-  color: #d4af37;
-  transition: transform 0.2s;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
+/* Optimización para móviles */
 @media (max-width: 768px) {
-  .invitation {
-    background: url("Imagenes/mobile/1.jpg") no-repeat center center;
-    background-size: cover;
+  .name h1,
+  .invitation h1 {
+    font-size: 1.8rem;
+  }
+
+  .reveal-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .section {
+    padding: 15px;
+  }
+
+  .invitation p {
+    font-size: 1.2rem;
   }
 }

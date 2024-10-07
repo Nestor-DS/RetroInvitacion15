@@ -18,23 +18,26 @@
 
   <body>
     <div class="welcome-screen">
-      <h1>¡Acepta la Invitación!</h1>
-      <button class="reveal-button" onclick="revealInvitation()">
+      <h1>MIS XV</h1>
+      <h1>AÑOS</h1>
+      <h2>ABRIL</h2>
+      <button class="reveal-button" onclick="revealInvitation(), togglePlay()">
         Ver Invitación
       </button>
     </div>
 
     <main>
-      <section class="section name"></section>
+      <section class="section name">
+        <h1>¡Estás Invitado!</h1>
+      </section>
 
       <section class="section invitation">
-        <h1>¡Estás Invitado!</h1>
         <p>
           Con la bendición de Dios y el amor de mi familia, me siento muy feliz
           de llegar a este momento de mi vida. Los invito a compartir conmigo
           este día tan especial.
         </p>
-        <audio id="audioPlayer" src="assets/music.mp3"></audio>
+        <audio id="audioPlayer" src="assets/music.m4a"></audio>
         <div class="player-container">
           <button id="playButton" class="play-button">▶️</button>
         </div>
