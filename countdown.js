@@ -42,5 +42,4 @@ function togglePlay() {
 }
 
 document.getElementById("playButton").addEventListener("click", togglePlay);
-
 window.onload = startCountdown;

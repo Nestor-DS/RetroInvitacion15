@@ -10,12 +10,13 @@
     />
     <link rel="icon" href="assets/img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
     />
   </head>
-
   <body>
     <div class="welcome-screen">
       <h1>MIS XV</h1>
@@ -25,12 +26,18 @@
         Ver Invitación
       </button>
     </div>
-
     <main>
       <section class="section name">
         <h1>¡Estás Invitado!</h1>
       </section>
-
+      <section class="section viny">
+        <img
+          src="Imagenes/p/viny2.png"
+          alt="Viny"
+          id="viny_image"
+          style="display: none"
+        />
+      </section>
       <section class="section invitation">
         <p>
           Con la bendición de Dios y el amor de mi familia, me siento muy feliz
@@ -42,26 +49,28 @@
           <button id="playButton" class="play-button">▶️</button>
         </div>
       </section>
-
       <section class="section table-section">
         <div class="details-container">
           <table>
-            <tr>
-              <th>Padres</th>
-              <th>Madrina</th>
-            </tr>
-            <tr>
-              <td>Arturo Merino Rivera</td>
-              <td>Olimpia Concepción Merino Rivera</td>
-            </tr>
-            <tr>
-              <td>Sofía Hernández Bautista</td>
-              <td></td>
-            </tr>
+            <thead>
+              <tr>
+                <th>Padres</th>
+                <th>Madrina</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arturo Merino Rivera</td>
+                <td>Olimpia Concepción Merino Rivera</td>
+              </tr>
+              <tr>
+                <td>Sofía Hernández Bautista</td>
+                <td></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </section>
-
       <section class="section invitation-message">
         <p>
           Nos complace invitarte a celebrar los 15 años de nuestra querida
@@ -81,7 +90,6 @@
           </li>
         </ul>
       </section>
-
       <section class="section countdown-section">
         <h2>Faltan</h2>
         <div id="countdown">
@@ -103,16 +111,14 @@
           </div>
         </div>
       </section>
-
       <section class="section location-section">
         <h2>Detalles del Evento</h2>
-        <p><strong>Fecha: </strong>21 de diciembre del 2024</p>
-        <p><strong>Hora: </strong>17:00</p>
+        <p><strong>Fecha:</strong> 21 de diciembre del 2024</p>
+        <p><strong>Hora:</strong> 17:00</p>
         <p>
-          <strong>Dirección: </strong>Ignacio Zaragoza 116, El Durazno, San
+          <strong>Dirección:</strong> Ignacio Zaragoza 116, El Durazno, San
           Agustín Tlaxiaca.
         </p>
-
         <div class="container">
           <a
             href="https://maps.app.goo.gl/w2eQWqVWch3VK9hc6"
@@ -121,14 +127,12 @@
             >Ver Ubicación</a
           >
         </div>
-
         <p class="footer">
           Esperamos contar con tu presencia para celebrar juntos este momento
           tan especial.
         </p>
         <p class="footer">Con cariño, La Familia MERINO HERNÁNDEZ</p>
       </section>
-
       <section class="section confirmation-section">
         <h2>Confirma tu Asistencia</h2>
         <div class="container">
@@ -141,14 +145,13 @@
         </div>
       </section>
     </main>
-
     <script src="countdown.js"></script>
     <script>
       function revealInvitation() {
         document.querySelector(".welcome-screen").style.display = "none";
-        document.querySelectorAll(".section").forEach((section) => {
-          section.classList.add("reveal");
-        });
+        document
+          .querySelectorAll(".section")
+          .forEach((section) => section.classList.add("reveal"));
       }
     </script>
   </body>

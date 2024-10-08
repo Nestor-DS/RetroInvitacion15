@@ -6,7 +6,6 @@ body {
   color: #333;
 }
 
-/* Animación de entrada */
 @keyframes slideIn {
   0% {
     transform: translateY(100%);
@@ -40,7 +39,6 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Botón de revelación */
 .reveal-button {
   background-color: #a076f9;
   color: #fff;
@@ -48,9 +46,10 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: bold;
   transition: background-color 0.5s, transform 0.5s;
+  font-family: "Dancing Script", cursive;
 }
 
 .reveal-button:hover {
@@ -58,7 +57,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Sección con efecto de revelación */
 .section {
   height: 100vh;
   display: flex;
@@ -76,11 +74,10 @@ body {
   transform: translateY(0);
 }
 
-/* Sección 'name' */
 .name {
   position: relative;
   padding: 20px;
-  background: url("Imagenes/others/pc1.jpg") no-repeat center center;
+  background: url("Imagenes/others/a.jpg") no-repeat center center;
   background-size: cover;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -88,17 +85,35 @@ body {
 }
 
 .name h1 {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   margin: 0;
   position: absolute;
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  color: #f9f1ff;
+  color: #f9fecb;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
 }
 
-/* Sección 'invitation' */
+#viny_image {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .invitation {
   position: relative;
   padding: 20px;
@@ -127,7 +142,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Tipografía general */
 h1 {
   color: #a076f9;
   text-align: center;
@@ -147,7 +161,6 @@ p {
   line-height: 1.6;
 }
 
-/* Botones */
 .location-button {
   background-color: #a076f9;
   color: #fff;
@@ -165,7 +178,6 @@ p {
   transform: scale(1.05);
 }
 
-/* Reloj de cuenta regresiva */
 #countdown {
   display: flex;
   justify-content: space-around;
@@ -189,18 +201,16 @@ p {
   color: #a076f9;
 }
 
-/* Pie de página */
 .footer {
   text-align: center;
   color: #666;
   margin-top: 20px;
 }
 
-/* Optimización para móviles */
 @media (max-width: 768px) {
   .name h1,
   .invitation h1 {
-    font-size: 1.8rem;
+    font-size: 5rem;
   }
 
   .reveal-button {
