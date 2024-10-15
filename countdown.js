@@ -2,7 +2,7 @@ const eventDate = new Date("Dec 21, 2024 17:00:00").getTime();
 let countdownFunction;
 
 function updateCountdown() {
-  const now = new Date().getTime();
+  const now = Date.now();
   const distance = eventDate - now;
 
   const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(
@@ -20,10 +20,10 @@ function updateCountdown() {
     "0"
   );
 
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
 
   if (distance < 0) {
     clearInterval(countdownFunction);
@@ -43,3 +43,12 @@ function togglePlay() {
 
 document.getElementById("playButton").addEventListener("click", togglePlay);
 window.onload = startCountdown;
+
+let isToggled = false;
+function moveVinyl() {
+  const vinyImage = document.getElementById("viny_image");
+  vinyImage.style.transform = isToggled
+    ? "translate(0, 0)"
+    : "translate(20%, 0)";
+  isToggled = !isToggled;
+}
