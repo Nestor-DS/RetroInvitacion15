@@ -30,24 +30,33 @@
       <section class="section name">
         <h1>¡Estás Invitado!</h1>
       </section>
+
       <section class="section viny">
-        <img
-          src="Imagenes/p/viny2.png"
-          alt="Viny"
-          id="viny_image"
-          style="display: none"
-        />
-      </section>
+        <div id="sectionVinyTitle">
+          <h1>¡Felices 15 Abril!</h1>
+          <p>Hoy es el comienzo de una nueva aventura, ¡felices 15 años llenos de sueños y sonrisas!</p>
+        </div>
+        <div id="sectionVinyBody">
+          <img 
+            src="Imagenes/p/cover.svg"
+            alt="Cover"
+            id="cover_viny"
+            onclick="moveCover(), togglePlay()"
+          >
+          <img
+            src="Imagenes/p/viny2.png"
+            alt="Vinyl"
+            id="viny_image"
+          />
+        </div>
+      </section>  
+      
       <section class="section invitation">
         <p>
           Con la bendición de Dios y el amor de mi familia, me siento muy feliz
           de llegar a este momento de mi vida. Los invito a compartir conmigo
           este día tan especial.
         </p>
-        <audio id="audioPlayer" src="assets/music.m4a"></audio>
-        <div class="player-container">
-          <button id="playButton" class="play-button">▶️</button>
-        </div>
       </section>
       <section class="section table-section">
         <div class="details-container">
@@ -90,27 +99,30 @@
           </li>
         </ul>
       </section>
+      
       <section class="section countdown-section">
-        <h2>Faltan</h2>
-        <div id="countdown">
-          <div class="timer-section">
-            <div class="number" id="days">00</div>
-            <span>Días</span>
+          <h2>Cuenta Regresiva</h2>
+          <div id="countdown">
+            <div class="timer-section">
+              <span class="number" id="days">00</span>
+              <span>Días</span>
+            </div>
+            <div class="timer-section">
+              <span class="number" id="hours">00</span>
+              <span>Horas</span>
+            </div>
+            <div class="timer-section">
+              <span class="number" id="minutes">00</span>
+              <span>Minutos</span>
+            </div>
+            <div class="timer-section">
+              <span class="number" id="seconds">00</span>
+              <span>Segundos</span>
+            </div>
           </div>
-          <div class="timer-section">
-            <div class="number" id="hours">00</div>
-            <span>Horas</span>
-          </div>
-          <div class="timer-section">
-            <div class="number" id="minutes">00</div>
-            <span>Minutos</span>
-          </div>
-          <div class="timer-section">
-            <div class="number" id="seconds">00</div>
-            <span>Segundos</span>
-          </div>
-        </div>
-      </section>
+    </section>
+      
+    
       <section class="section location-section">
         <h2>Detalles del Evento</h2>
         <p><strong>Fecha:</strong> 21 de diciembre del 2024</p>

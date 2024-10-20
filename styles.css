@@ -1,11 +1,36 @@
+/* Global Styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", serif;
-  background: linear-gradient(to bottom right, #f4f1fa, #ffffff);
-  color: #333;
+  font-family: "Playfair Display", serif; /* Tipografía global */
+  background: linear-gradient(
+    to bottom right,
+    #f4f1fa,
+    #ffffff
+  ); /* Fondo degradado */
+  color: #333; /* Color de texto global */
 }
 
+h1 {
+  color: #a076f9; /* Color para los títulos principales */
+  text-align: center; /* Centra el texto */
+  font-family: "Playfair Display", serif; /* Tipografía */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave en el texto */
+}
+
+h2 {
+  color: #555; /* Color secundario para subtítulos */
+  text-align: center;
+  margin-top: 20px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.1rem; /* Tamaño de fuente para párrafos */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Animaciones globales */
 @keyframes slideIn {
   0% {
     transform: translateY(100%);
@@ -17,26 +42,36 @@ body {
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos de pantalla de bienvenida */
 .welcome-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(228, 224, 255, 0.8);
+  background: rgba(228, 224, 255, 0.8); /* Fondo con opacidad */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 999;
-  animation: slideIn 0.5s ease forwards;
+  z-index: 999; /* Aparece sobre todo */
+  animation: slideIn 0.5s ease forwards; /* Animación de entrada */
 }
 
 .welcome-screen h1 {
   font-size: 2.5rem;
-  color: #2e003e;
+  color: #2e003e; /* Color fuerte para destacar */
   margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
 }
 
 .reveal-button {
@@ -48,16 +83,17 @@ body {
   cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
-  transition: background-color 0.5s, transform 0.5s;
   font-family: "Dancing Script", cursive;
   margin: 0 auto;
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 .reveal-button:hover {
-  background-color: #8b5fd6;
-  transform: scale(1.05);
+  background-color: #8b5fd6; /* Cambia color al pasar el mouse */
+  transform: scale(1.05); /* Efecto de agrandamiento */
 }
 
+/* Estilos para secciones */
 .section {
   display: flex;
   flex-direction: column;
@@ -68,21 +104,22 @@ body {
   padding: 20px;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones */
 }
 
 .section.reveal {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0); /* Al revelarse, se muestra en pantalla */
 }
 
+/* Estilos de la sección 'name' */
 .name {
   position: relative;
   padding: 20px;
-  background: url("Imagenes/others/a.jpg") no-repeat center center;
+  background: url("Imagenes/others/a.jpg") no-repeat center center; /* Imagen de fondo */
   background-size: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
   margin: 20px;
 }
 
@@ -94,27 +131,70 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: #f9fecb;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
   font-family: "Dancing Script", cursive;
   font-weight: bold;
 }
 
-#viny_image {
-  width: 50%;
+/* Section viny */
+.viny {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+#sectionVinyTitle {
+  margin-bottom: 30px; /* Espacio entre título y cuerpo */
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#cover_viny {
+  width: calc(20% + 5px);
   height: auto;
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  z-index: 2;
+  transition: transform 1s ease; /* Transición suave */
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+#viny_image {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  transition: transform 1s ease;
+}
+
+.cover-move {
+  transform: translateX(30%); /* Movimiento de la imagen */
+}
+
+/* Estilos responsivos para la sección viny */
+@media (max-width: 768px) {
+  #cover_viny {
+    width: calc(50% + 4px);
   }
-  to {
-    transform: rotate(360deg);
+
+  #viny_image {
+    width: 50%;
   }
 }
 
+/* Clases adicionales para animaciones */
+.translate-right {
+  transform: translate(20%, 0);
+}
+
+.translate-reset {
+  transform: translate(0, 0);
+}
+
+/* Estilos para la sección de invitación */
 .invitation {
   position: relative;
   padding: 20px;
@@ -128,7 +208,9 @@ body {
 .invitation h1,
 .invitation p {
   text-align: center;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
+  padding: 30px;
+  font-size: 2rem;
 }
 
 .invitation h1 {
@@ -140,29 +222,11 @@ body {
 .invitation p {
   font-size: 1.4rem;
   color: #f9f1ff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra en el texto */
   margin-bottom: 20px;
 }
 
-h1 {
-  color: #a076f9;
-  text-align: center;
-  font-family: "Playfair Display", serif;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  color: #555;
-  text-align: center;
-  margin-top: 20px;
-}
-
-p {
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
+/* Botón de ubicación */
 .location-button {
   background-color: #a076f9;
   color: #fff;
@@ -172,7 +236,7 @@ p {
   text-decoration: none;
   display: inline-block;
   margin: 10px auto;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s; /* Suave transición */
 }
 
 .location-button:hover {
@@ -180,275 +244,72 @@ p {
   transform: scale(1.05);
 }
 
+/* Countdown Styles */
+.countdown-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo claro */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra pronunciada */
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px; /* Ancho máximo */
+}
+
+.countdown-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Rubik", sans-serif;
+}
+
 #countdown {
   display: flex;
   justify-content: center;
-  font-family: "Press Start 2P", sans-serif;
-  background-color: rgba(51, 51, 51, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  color: #eee;
-  margin: 20px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  margin-bottom: 30px;
 }
 
+/* Estilos para los temporizadores */
 .timer-section {
-  text-align: center;
+  background-color: #f9f1ff;
+  border-radius: 10px;
+  padding: 15px 20px;
   margin: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
-.timer-section .number {
-  font-size: 2.5rem;
+.timer-section:hover {
+  transform: scale(1.05);
+}
+
+.number {
+  font-size: 3rem;
   font-weight: bold;
   color: #a076f9;
 }
 
-.footer {
-  text-align: center;
-  color: #666;
-  margin-top: 20px;
-}
-
-.table-section table {
-  width: 80%;
-  margin: 20px auto;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-family: 'Courier New', Courier, monospace;
-  color: #111; 
-}
-
-.table-section th, .table-section td {
-  padding: 15px;
-  border-bottom: 2px solid #000; 
-  text-align: center;
-  font-size: 1.3rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
-  letter-spacing: 1px;
-  background-color: #f9f9f9; 
-}
-
-.table-section th {
-  background-color: #fff;
-  font-size: 1.6rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-bottom: 3px double #000; 
-  padding: 20px;
-}
-
-.table-section td {
-  border-top: 1px solid #000;
-}
-
-.table-section tr:nth-child(odd) td {
-  background-color: #eee; 
-}
-
-.table-section tr:hover td {
-  background-color: #ccc; 
-  color: #000;
-}
-
-.table-section table::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 10px;
-  background: url('https://www.transparenttextures.com/patterns/black-linen.png'); 
-  margin-bottom: 10px;
-}
-@media (max-width: 768px) {
-  .table-section th, .table-section td {
-    font-size: 1rem;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .table-section th, .table-section td {
-    font-size: 0.9rem; 
-    padding: 8px;
-    word-wrap: break-word; 
-  }
-
-.table-section th::before, .table-section td::before {
-  content: '✧'; 
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+span {
   font-size: 1.2rem;
-  color: #555;
+  color: #666;
+  display: block;
+  margin-top: 5px;
 }
 
-.table-section th {
-  position: relative;
-}
-
-.table-section td {
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .name h1,
-  .invitation h1 {
-    font-size: 3.5rem;
-  }
-
-  .reveal-button {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-
-  .section {
-    padding: 15px;
-  }
-
-  .invitation p {
-    font-size: 1.2rem;
-  }
-}
-
-body {
-  font-family: 'Courier New', Courier, monospace;
-  color: #111; 
-  background-color: #f9f9f9; 
-  letter-spacing: 1px;
-  line-height: 1.6; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Courier New', Courier, monospace; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
-  color: #000; 
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-a {
-  color: #111;
-  text-decoration: none; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
-  transition: color 0.3s ease; 
-}
-
-a:hover {
-  color: #000;
-}
-
-p {
-  margin: 0 0 20px;
-  font-size: 1.2rem; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
-}
-
-button, .btn {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #000; 
-  color: #fff; 
+/* Botones */
+button {
+  background-color: #a076f9;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  letter-spacing: 1px;
-  text-shadow: none; 
-  text-transform: uppercase; 
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover, .btn:hover {
-  background-color: #333;
-}
-
-ul, ol {
-  margin: 0 0 20px 40px;
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-input, textarea {
-  font-family: 'Courier New', Courier, monospace;
-  padding: 10px;
-  border: 1px solid #000;
-  background-color: #fff;
-  color: #111;
-  letter-spacing: 1px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  p, ul, ol {
-    font-size: 1rem;
-  }
-
-  button, .btn {
-    padding: 8px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p, ul, ol {
-    font-size: 0.9rem;
-  }
-
-  button, .btn {
-    padding: 5px 10px;
-  }
-}
-
+button:hover {
+  background-color: #8b5fd6;
+  transform: scale(1.05);
 }
