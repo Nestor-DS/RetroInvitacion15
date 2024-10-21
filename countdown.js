@@ -52,3 +52,14 @@ function moveVinyl() {
     : "translate(20%, 0)";
   isToggled = !isToggled;
 }
+
+function moveCover() {
+  const cover = document.getElementById("viny_image");
+  const titleCover = document.getElementById("sectionVinyTitle");
+  const otherTitle = document.getElementById("sectionOtherTitle");
+
+  // Mover el cover y alternar la visibilidad del texto
+  cover.classList.toggle("cover-move");
+  titleCover.classList.toggle("visible");
+  otherTitle.classList.toggle("invisible");
+}

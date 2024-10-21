@@ -31,12 +31,24 @@
         <h1>¡Estás Invitado!</h1>
       </section>
       <section class="section viny">
-        <img
-          src="Imagenes/p/viny2.png"
-          alt="Viny"
-          id="viny_image"
-          style="display: none"
-        />
+        </div>
+        <div id="sectionVinyTitle">
+          <h1>¡Felices 15 Abril!</h1>
+          <p>Hoy es el comienzo de una nueva aventura, ¡felices 15 años llenos de sueños y sonrisas!</p>
+        </div>
+        <div id="sectionVinyBody">
+          <img 
+            src="Imagenes/p/cover.svg"
+            alt="Cover"
+            id="cover_viny"
+            onclick="moveCover(), togglePlay()"
+          >
+          <img
+            src="Imagenes/p/viny2.png"
+            alt="Vinyl"
+            id="viny_image"
+          />
+        </div>
       </section>
       <section class="section invitation">
         <p>
@@ -45,9 +57,6 @@
           este día tan especial.
         </p>
         <audio id="audioPlayer" src="assets/music.m4a"></audio>
-        <div class="player-container">
-          <button id="playButton" class="play-button">▶️</button>
-        </div>
       </section>
       <section class="section table-section">
         <div class="details-container">
