@@ -468,5 +468,29 @@ input, textarea {
     padding: 5px 10px;
   }
 }
+.invitacion-imgArbol {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: spin 5s infinite linear;
+}
+
+.invitation-imagenCaminand {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
 
 }
